@@ -1,6 +1,9 @@
 package ui;
 
 import core.CheckersLogic;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -27,8 +30,8 @@ public class CheckersTextConsole {
             System.out.println(game.getActivePlayer() + " - your turn.");
             System.out.println("Choose a cell position of piece to be moved and the new position. e.g., 3a-4b");
             String input = kb.nextLine();
-            int parsedInput[] = parseInput(input);
-            game.updateBoard(parsedInput[0], parsedInput[1], parsedInput[2], parsedInput[3]);
+            ArrayList<Integer> parsedInput = parseInput(input);
+            game.updateBoard(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3));
             printBoard(game.getBoard());
 
         }while (game.moreMoves());
@@ -64,10 +67,18 @@ public class CheckersTextConsole {
 
     }
 
-    private static int[] parseInput(String input) {
+    private static ArrayList<Integer> parseInput(String input) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
         String delimiter = "-";
         String[] parsed = input.split(delimiter);
-        System.out.println(parsed[0] + " " + parsed[1]);
-        return new int[] {5,0,4,1};
+        for (String s : parsed) {
+            char[] charArr = s.toCharArray();
+            int row = 8 - Character.getNumericValue(charArr[0]);
+            result.add(row);
+            int col = Arrays.asList(columnIndex).indexOf(Character.toString(charArr[1]));
+            result.add(col);
+        }
+        System.out.println(result);
+        return result;
     }
 }
