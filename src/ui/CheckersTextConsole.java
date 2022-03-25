@@ -1,6 +1,7 @@
 package ui;
 
 import core.CheckersLogic;
+import java.util.Scanner;
 
 /**
  * CheckersTextConsole
@@ -15,8 +16,25 @@ public class CheckersTextConsole {
 
     /** Game driver */
     public static void main(String[] args) {
+        // Initializes checker game
         CheckersLogic game = new CheckersLogic();
+        Scanner kb = new Scanner(System.in);
+
         printBoard(game.getBoard());
+        System.out.print("Begin Game. Player ");
+
+        do {
+            System.out.println(game.getActivePlayer() + " - your turn.");
+            System.out.println("Choose a cell position of piece to be moved and the new position. e.g., 3a-4b");
+            String input = kb.nextLine();
+            int parsedInput[] = parseInput(input);
+            game.updateBoard(parsedInput[0], parsedInput[1], parsedInput[2], parsedInput[3]);
+            printBoard(game.getBoard());
+
+        }while (game.moreMoves());
+
+        kb.close();
+        
     }
 
     /** Prints current state of the game
@@ -35,7 +53,7 @@ public class CheckersTextConsole {
         for (String str : columnIndex) {
             System.out.print("   " + str);
         }
-        System.out.println();
+        System.out.println("\n\n");
     }
 
     private static void requestMove() {
@@ -44,5 +62,12 @@ public class CheckersTextConsole {
 
     private static void printError() {
 
+    }
+
+    private static int[] parseInput(String input) {
+        String delimiter = "-";
+        String[] parsed = input.split(delimiter);
+        System.out.println(parsed[0] + " " + parsed[1]);
+        return new int[] {5,0,4,1};
     }
 }
