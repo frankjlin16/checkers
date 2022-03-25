@@ -15,6 +15,8 @@ public class CheckersLogic {
     private String activePlayer;
     /** Stores the current board position for the game. */
     private String[][] currentBoard;
+    /** Is the game still active? */
+    public boolean isActive;
 
     /**
      * Initializes the game logic.
@@ -32,6 +34,7 @@ public class CheckersLogic {
                 { "_", "X", "_", "X", "_", "X", "_", "X" },
                 { "X", "_", "X", "_", "X", "_", "X", "_" },
         };
+        isActive = true;
     }
 
     public boolean isValid(int oldRow, int oldCol, int newRow, int newCol) {
@@ -66,6 +69,7 @@ public class CheckersLogic {
 
         // Update new position
         currentBoard[newRow][newCol] = activePlayer;
+
 
         // Change active players
         changeActivePlayer();

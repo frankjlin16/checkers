@@ -28,19 +28,28 @@ public class CheckersTextConsole {
 
         do {
             System.out.println(game.getActivePlayer() + " - your turn.");
-            System.out.println("Choose a cell position of piece to be moved and the new position. e.g., 3a-4b");
-            String input = kb.nextLine();
-            ArrayList<Integer> parsedInput = parseInput(input);
+            ArrayList<Integer> parsedInput;
+            do {
+                System.out.println("Choose a cell position of piece to be moved and the new position. e.g., 3a-4b");
+                String input = kb.nextLine();
+                parsedInput = parseInput(input);
+                if (!game.isValid(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3))) {
+                    System.out.println("That's an illegal move! Try again. \n");
+                }
+            }while(!game.isValid(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3)));
+            
+            // Update the board
             game.updateBoard(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3));
             printBoard(game.getBoard());
 
-        } while (game.moreMoves());
+        } while (game.isActive);
 
         kb.close();
 
     }
 
-    /** Prints current state of the game
+    /**
+     * Prints current state of the game
      * 
      * @param board
      */
@@ -59,7 +68,8 @@ public class CheckersTextConsole {
         System.out.println("\n\n");
     }
 
-    /** Parses user input and returns ArrayList in Integer form
+    /**
+     * Parses user input and returns ArrayList in Integer form
      * 
      * @param input
      * @return
@@ -75,7 +85,6 @@ public class CheckersTextConsole {
             int col = Arrays.asList(columnIndex).indexOf(Character.toString(charArr[1]));
             result.add(col);
         }
-        System.out.println(result);
         return result;
     }
 }
