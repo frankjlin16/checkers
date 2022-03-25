@@ -8,7 +8,7 @@ package core;
  * @author Frank Lin
  * @version 1.0 pre-release
  */
-public class Checkers {
+public class CheckersLogic {
 
     public static void main(String[] args) {
 
