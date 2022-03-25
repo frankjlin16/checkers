@@ -31,6 +31,11 @@ public class CheckersTextConsole {
             }
             System.out.println(" |\n");
         }
+        System.out.print(" ");
+        for (String str : columnIndex) {
+            System.out.print("   " + str);
+        }
+        System.out.println();
     }
 
     private static void requestMove() {
