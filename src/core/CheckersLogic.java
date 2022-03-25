@@ -41,8 +41,6 @@ public class CheckersLogic {
     }
 
     public void updateBoard() {}
-    
-    private boolean gridOccupiedByOpponent() { return false; }
 
     public boolean moreMoves() { return true; }
 
