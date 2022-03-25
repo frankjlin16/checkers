@@ -14,8 +14,8 @@ import java.util.Scanner;
  */
 public class CheckersTextConsole {
 
-    private static final String rowIndex[] = {"8", "7", "6", "5","4", "3", "2", "1"};
-    private static final String columnIndex[] = {"a", "b", "c", "d","e", "f","g", "h"};
+    private static final String rowIndex[] = { "8", "7", "6", "5", "4", "3", "2", "1" };
+    private static final String columnIndex[] = { "a", "b", "c", "d", "e", "f", "g", "h" };
 
     /** Game driver */
     public static void main(String[] args) {
@@ -34,10 +34,10 @@ public class CheckersTextConsole {
             game.updateBoard(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3));
             printBoard(game.getBoard());
 
-        }while (game.moreMoves());
+        } while (game.moreMoves());
 
         kb.close();
-        
+
     }
 
     /** Prints current state of the game
@@ -59,14 +59,11 @@ public class CheckersTextConsole {
         System.out.println("\n\n");
     }
 
-    private static void requestMove() {
-
-    }
-
-    private static void printError() {
-
-    }
-
+    /** Parses user input and returns ArrayList in Integer form
+     * 
+     * @param input
+     * @return
+     */
     private static ArrayList<Integer> parseInput(String input) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         String delimiter = "-";
