@@ -38,18 +38,26 @@ public class CheckersLogic {
     }
 
     public boolean isValid(int oldRow, int oldCol, int newRow, int newCol) {
+        // Can't move opponent piece
+        if (currentBoard[oldRow][oldCol] != activePlayer || currentBoard[newRow][newCol] == activePlayer) {
+            return false;
+        }
         // Can't be same columnIndex
-        if (newCol == oldCol)
+        if (newCol == oldCol) {
             return false;
+        }
+
         // Distance between colums can't be greater than 1
-        if (Math.sqrt(newCol - oldCol) > 1)
+        if (newCol - oldCol > 1 || newCol - oldCol < -1) {
             return false;
+        }
+
         if (activePlayer == "X") {
-            if (newRow > oldRow) {
+            if (newRow < oldRow) {
                 return true;
             }
         } else if (activePlayer == "O") {
-            if (newRow < oldRow) {
+            if (newRow > oldRow) {
                 return true;
             }
         }
@@ -69,7 +77,6 @@ public class CheckersLogic {
 
         // Update new position
         currentBoard[newRow][newCol] = activePlayer;
-
 
         // Change active players
         changeActivePlayer();
