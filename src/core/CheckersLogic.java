@@ -115,8 +115,9 @@ public class CheckersLogic {
     }
 
     /**
+     * Check for no pieces left
      * 
-     * @return
+     * @return false if no pieces left, otherwise true
      */
     private boolean piecesLeft() {
         // If current player is X, search each row for O. If O is not found, move to the
@@ -136,10 +137,20 @@ public class CheckersLogic {
         return false;
     }
 
+    /**
+     * Get the latest board state
+     * 
+     * @return string matrix of the current board state
+     */
     public String[][] getBoard() {
         return currentBoard;
     }
 
+    /**
+     * Get the current active player
+     * 
+     * @return string of the current active player
+     */
     public String getActivePlayer() {
         return activePlayer;
     }
