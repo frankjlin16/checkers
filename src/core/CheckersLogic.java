@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @version 1.0 pre-release
  */
 public class CheckersLogic {
-    /** 0 is player X's turn. 1 is player O's turn. */
+    /** Shows which player is the active player */
     private String activePlayer;
     /** Stores the current board position for the game. */
     private String[][] currentBoard;
