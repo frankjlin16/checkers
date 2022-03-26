@@ -110,7 +110,6 @@ public class CheckersLogic {
      * @return true if there are more moves left to be played, false otherwise.
      */
     public boolean moreMoves() {
-        // TODO: Need to check if any legal moves are left
         return piecesLeft();
     }
 
