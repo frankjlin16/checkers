@@ -37,6 +37,15 @@ public class CheckersLogic {
         isActive = true;
     }
 
+    /**
+     * Check if a move is legal
+     * 
+     * @param oldRow row index of initial position
+     * @param oldCol colume index of initial position
+     * @param newRow row index of new position
+     * @param newCol colume index of new position
+     * @return true if the move is valid, false otherwise.
+     */
     public boolean isValid(int oldRow, int oldCol, int newRow, int newCol) {
         // Can't move opponent piece
         if (currentBoard[oldRow][oldCol] != activePlayer || currentBoard[newRow][newCol] == activePlayer) {
@@ -64,6 +73,7 @@ public class CheckersLogic {
         return false;
     }
 
+    /** Change the active player */
     private void changeActivePlayer() {
         if (activePlayer == "X")
             activePlayer = "O";
@@ -71,6 +81,14 @@ public class CheckersLogic {
             activePlayer = "X";
     }
 
+    /**
+     * Update the game's board state
+     * 
+     * @param oldRow row index of initial position
+     * @param oldCol colume index of initial position
+     * @param newRow row index of new position
+     * @param newCol colume index of new position
+     */
     public void updateBoard(int oldRow, int oldCol, int newRow, int newCol) {
         // Empty the old position
         currentBoard[oldRow][oldCol] = "_";
@@ -78,15 +96,28 @@ public class CheckersLogic {
         // Update new position
         currentBoard[newRow][newCol] = activePlayer;
 
+        // Check Win/Lose
+        isActive = moreMoves();
+
         // Change active players
-        changeActivePlayer();
+        if (isActive)
+            changeActivePlayer();
     }
 
+    /**
+     * Check if there are more moves left to be played
+     * 
+     * @return true if there are more moves left to be played, false otherwise.
+     */
     public boolean moreMoves() {
         // TODO: Need to check if any legal moves are left
         return piecesLeft();
     }
 
+    /**
+     * 
+     * @return
+     */
     private boolean piecesLeft() {
         // If current player is X, search each row for O. If O is not found, move to the
         // next row. If O is found, return true.
