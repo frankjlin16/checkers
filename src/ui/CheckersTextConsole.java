@@ -44,6 +44,8 @@ public class CheckersTextConsole {
 
         } while (game.isActive);
 
+        System.out.println("Player " + game.getActivePlayer() + " Won the Game");
+
         kb.close();
 
     }
