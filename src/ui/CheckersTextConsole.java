@@ -14,7 +14,9 @@ import java.util.Scanner;
  */
 public class CheckersTextConsole {
 
+    /** Row index of the game board */
     private static final String rowIndex[] = { "8", "7", "6", "5", "4", "3", "2", "1" };
+    /** Column index of the game board */
     private static final String columnIndex[] = { "a", "b", "c", "d", "e", "f", "g", "h" };
 
     /** Game driver */
@@ -53,7 +55,7 @@ public class CheckersTextConsole {
     /**
      * Prints current state of the game
      * 
-     * @param board
+     * @param board 2D string matrix of the current board state
      */
     private static void printBoard(String[][] board) {
         for (int i = 0; i < board.length; i++) {
@@ -73,8 +75,8 @@ public class CheckersTextConsole {
     /**
      * Parses user input and returns ArrayList in Integer form
      * 
-     * @param input
-     * @return
+     * @param input user-input string
+     * @return an ArrayList with the initial and final position in integer form
      */
     private static ArrayList<Integer> parseInput(String input) {
         ArrayList<Integer> result = new ArrayList<Integer>();
