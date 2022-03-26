@@ -89,7 +89,6 @@ public class CheckersTextConsole {
             int col = Arrays.asList(columnIndex).indexOf(Character.toString(charArr[1]));
             result.add(col);
         }
-        System.out.println(result);
         return result;
     }
 }
