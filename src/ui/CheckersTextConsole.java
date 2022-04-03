@@ -15,9 +15,9 @@ import java.util.Scanner;
 public class CheckersTextConsole {
 
     /** Row index of the game board */
-    private static final String rowIndex[] = { "8", "7", "6", "5", "4", "3", "2", "1" };
+    public static final String rowIndex[] = { "8", "7", "6", "5", "4", "3", "2", "1" };
     /** Column index of the game board */
-    private static final String columnIndex[] = { "a", "b", "c", "d", "e", "f", "g", "h" };
+    public static final String columnIndex[] = { "a", "b", "c", "d", "e", "f", "g", "h" };
 
     /** Game driver */
     public static void main(String[] args) {
