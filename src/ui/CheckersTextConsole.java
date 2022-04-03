@@ -1,6 +1,7 @@
 package ui;
 
 import core.CheckersLogic;
+import core.CheckersComputerPlayer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,6 +24,9 @@ public class CheckersTextConsole {
     public static void main(String[] args) {
         // Initializes checker game
         CheckersLogic game = new CheckersLogic();
+        // Initializes computer player
+        CheckersComputerPlayer computer = new CheckersComputerPlayer(game);
+        // Initializes Scanner
         Scanner kb = new Scanner(System.in);
 
         printBoard(game.getBoard());
