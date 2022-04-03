@@ -74,7 +74,7 @@ public class CheckersLogic {
     }
 
     /** Change the active player */
-    private void changeActivePlayer() {
+    public void changeActivePlayer() {
         if (activePlayer == "X")
             activePlayer = "O";
         else if (activePlayer == "O")
