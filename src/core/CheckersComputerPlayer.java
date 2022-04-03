@@ -2,7 +2,7 @@ package core;
 
 import java.util.Arrays;
 import java.util.ArrayList;
-import ui.CheckersTextConsole;
+
 /**
  * CheckersComputerPlayer
  * 
@@ -17,9 +17,6 @@ public class CheckersComputerPlayer {
     /** A string array that is used to contain all movable pieces */
     private ArrayList<Pair> movablePieces;
     private CheckersLogic game;
-    private String[] rowIndex = CheckersTextConsole.rowIndex;
-    private String[] colIndex = CheckersTextConsole.colIndex;
-
 
     /**
      * Constructor for the CheckersComputerPlayer
@@ -78,7 +75,6 @@ public class CheckersComputerPlayer {
     class Pair {
         int row;
         int col;
-
 
         /**
          * Constructor for the Pair class
