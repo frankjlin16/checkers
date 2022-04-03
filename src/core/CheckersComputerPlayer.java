@@ -1,7 +1,8 @@
 package core;
 
 import java.util.Arrays;
-
+import java.util.ArrayList;
+import ui.CheckersTextConsole;
 /**
  * CheckersComputerPlayer
  * 
@@ -14,24 +15,50 @@ import java.util.Arrays;
 public class CheckersComputerPlayer {
     // Defines variables
     /** A string array that is used to contain all movable pieces */
-    private String[] movablePieces;
+    private ArrayList<Pair> movablePieces;
+    private CheckersLogic game;
+    private String[] rowIndex = CheckersTextConsole.rowIndex;
+    private String[] colIndex = CheckersTextConsole.colIndex;
 
-    /** Constuctor for CheckersComputerPlayer */
-    public CheckersComputerPlayer() {
+
+    /**
+     * Constructor for the CheckersComputerPlayer
+     * 
+     * @param game game logic for the active game
+     */
+    public CheckersComputerPlayer(CheckersLogic game) {
+        this.game = game;
     }
 
     /**
      * Find the movable pieces for the computer player and put them into
      * movablePieces array.
      * 
-     * @param currentBoard
+     * @param currentBoard the current checker board position
      */
     public void searchMovablePieces(String[][] currentBoard) {
-        for (int i = 0; i < currentBoard.length; i++) { // Loop each row of the board
+        if (!isMovableEmpty()) { // Clear movablePieces is the array is not empty.
+            movablePieces = null;
+        }
+        for (int i = 0; i < currentBoard.length - 1; i++) { // Loop each row of the board (but not the last row)
             if (Arrays.asList(currentBoard[i]).contains("O")) { // Enter the row is the row contains "O"
                 for (int j = 0; j < currentBoard[i].length; j++) { // Loop each item of the row
                     if (currentBoard[i][j].equals("O")) { // Enter if the item is "O"
-                        System.out.println(i + " " + j + " ");
+                        int newCol1;
+                        int newCol2;
+                        if (j == 0) { // If the piece is on the 0 col, only check +1 position
+                            newCol1 = j + 1;
+                            newCol2 = newCol1;
+                        } else if (j == 7) { // If the piece is on the 7 col, only check -1 position
+                            newCol1 = j - 1;
+                            newCol2 = newCol1;
+                        } else { // Else, check both +1 and -1 possition
+                            newCol1 = j + 1;
+                            newCol2 = j - 1;
+                        }
+                        if (game.isValid(i, j, i + 1, newCol1) || game.isValid(i, j, i + 1, newCol2)) {
+                            movablePieces.add(new Pair(i, j));
+                        }
                     }
                 }
             }
@@ -45,5 +72,23 @@ public class CheckersComputerPlayer {
      */
     public boolean isMovableEmpty() {
         return movablePieces == null;
+    }
+
+    /** A class that represents a movable piece's coordinates */
+    class Pair {
+        int row;
+        int col;
+
+
+        /**
+         * Constructor for the Pair class
+         * 
+         * @param row the row index of the piece
+         * @param col the column index of the piece
+         */
+        Pair(int row, int col) {
+            this.row = row;
+            this.col = col;
+        }
     }
 }
