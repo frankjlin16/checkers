@@ -2,6 +2,7 @@ package test;
 
 import core.CheckersComputerPlayer;
 import core.CheckersLogic;
+import ui.CheckersTextConsole;
 
 public class Testing {
 
@@ -10,8 +11,10 @@ public class Testing {
         CheckersComputerPlayer player = new CheckersComputerPlayer(game);
 
         game.changeActivePlayer();
+        CheckersTextConsole.printBoard(game.getBoard());
         player.searchMovablePieces(game.getBoard());
-        System.out.println(player.getMovablePieces());
+        player.move();
+        CheckersTextConsole.printBoard(game.getBoard());
     }
 
 }
