@@ -25,6 +25,7 @@ public class CheckersComputerPlayer {
      */
     public CheckersComputerPlayer(CheckersLogic game) {
         this.game = game;
+        this.movablePieces = new ArrayList<Pair>();
     }
 
     /**
@@ -34,9 +35,7 @@ public class CheckersComputerPlayer {
      * @param currentBoard the current checker board position
      */
     public void searchMovablePieces(String[][] currentBoard) {
-        if (!isMovableEmpty()) { // Clear movablePieces is the array is not empty.
-            movablePieces = null;
-        }
+        movablePieces.clear();
         for (int i = 0; i < currentBoard.length - 1; i++) { // Loop each row of the board (but not the last row)
             if (Arrays.asList(currentBoard[i]).contains("O")) { // Enter the row is the row contains "O"
                 for (int j = 0; j < currentBoard[i].length; j++) { // Loop each item of the row
@@ -60,15 +59,6 @@ public class CheckersComputerPlayer {
                 }
             }
         }
-    }
-
-    /**
-     * Check is the movablePieces array is empty.
-     * 
-     * @return true is the movablePieces array is empty. Otherwise false.
-     */
-    public boolean isMovableEmpty() {
-        return movablePieces == null;
     }
 
     /**
