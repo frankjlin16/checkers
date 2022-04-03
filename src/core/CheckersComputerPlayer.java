@@ -71,6 +71,15 @@ public class CheckersComputerPlayer {
         return movablePieces == null;
     }
 
+    /**
+     * Get the movable pieces' coordinates
+     * 
+     * @return an ArrayList that contains the movable pieces' coordinates
+     */
+    public ArrayList<Pair> getMovablePieces() {
+        return movablePieces;
+    }
+
     /** A class that represents a movable piece's coordinates */
     class Pair {
         int row;
@@ -85,6 +94,10 @@ public class CheckersComputerPlayer {
         Pair(int row, int col) {
             this.row = row;
             this.col = col;
+        }
+
+        public String toString() {
+            return "(" + row + ", " + col + ")";
         }
     }
 }
