@@ -61,7 +61,9 @@ public class CheckersComputerPlayer {
         }
     }
 
-    /** Select a random piece from movablePieces and move it to a legal new position */
+    /**
+     * Select a random piece from movablePieces and move it to a legal new position
+     */
     public void move() {
         // TODO Auto-generated method stub
     }
@@ -89,6 +91,24 @@ public class CheckersComputerPlayer {
         Pair(int row, int col) {
             this.row = row;
             this.col = col;
+        }
+
+        /**
+         * Get the row of the piece
+         * 
+         * @return an int that represents the row of the piece
+         */
+        public int getRow() {
+            return row;
+        }
+
+        /**
+         * Get the column of the piece
+         * 
+         * @return an int that represents the column of the piece
+         */
+        public int getCol() {
+            return col;
         }
 
         /** Returns the string representation of this object */
