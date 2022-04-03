@@ -61,7 +61,7 @@ public class CheckersTextConsole {
      * 
      * @param board 2D string matrix of the current board state
      */
-    private static void printBoard(String[][] board) {
+    public static void printBoard(String[][] board) {
         for (int i = 0; i < board.length; i++) {
             System.out.print(rowIndex[i]);
             for (int j = 0; j < board[i].length; j++) {
