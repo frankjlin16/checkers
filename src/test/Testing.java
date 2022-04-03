@@ -11,7 +11,7 @@ public class Testing {
 
         game.changeActivePlayer();
         player.searchMovablePieces(game.getBoard());
-        player.getMovablePieces();
+        System.out.println(player.getMovablePieces());
     }
 
 }
