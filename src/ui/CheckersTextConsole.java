@@ -17,7 +17,7 @@ public class CheckersTextConsole {
     /** Row index of the game board */
     public static final String rowIndex[] = { "8", "7", "6", "5", "4", "3", "2", "1" };
     /** Column index of the game board */
-    public static final String columnIndex[] = { "a", "b", "c", "d", "e", "f", "g", "h" };
+    public static final String colIndex[] = { "a", "b", "c", "d", "e", "f", "g", "h" };
 
     /** Game driver */
     public static void main(String[] args) {
@@ -66,7 +66,7 @@ public class CheckersTextConsole {
             System.out.println(" |\n");
         }
         System.out.print(" ");
-        for (String str : columnIndex) {
+        for (String str : colIndex) {
             System.out.print("   " + str);
         }
         System.out.println("\n\n");
@@ -86,7 +86,7 @@ public class CheckersTextConsole {
             char[] charArr = s.toCharArray();
             int row = 8 - Character.getNumericValue(charArr[0]);
             result.add(row);
-            int col = Arrays.asList(columnIndex).indexOf(Character.toString(charArr[1]));
+            int col = Arrays.asList(colIndex).indexOf(Character.toString(charArr[1]));
             result.add(col);
         }
         return result;
