@@ -105,7 +105,7 @@ public class CheckersComputerPlayer {
     }
 
     /** A inner-class that represents a movable piece's coordinates */
-    class Pair {
+    private class Pair {
         private int row;
         private int col;
 
@@ -115,7 +115,7 @@ public class CheckersComputerPlayer {
          * @param row the row index of the piece
          * @param col the column index of the piece
          */
-        Pair(int row, int col) {
+        private Pair(int row, int col) {
             this.row = row;
             this.col = col;
         }
