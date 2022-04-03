@@ -61,6 +61,11 @@ public class CheckersComputerPlayer {
         }
     }
 
+    /** Select a random piece from movablePieces and move it to a legal new position */
+    public void move() {
+        // TODO Auto-generated method stub
+    }
+
     /**
      * Get the movable pieces' coordinates
      * 
