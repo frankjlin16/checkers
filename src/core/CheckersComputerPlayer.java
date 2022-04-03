@@ -70,7 +70,7 @@ public class CheckersComputerPlayer {
         return movablePieces;
     }
 
-    /** A class that represents a movable piece's coordinates */
+    /** A inner-class that represents a movable piece's coordinates */
     class Pair {
         int row;
         int col;
