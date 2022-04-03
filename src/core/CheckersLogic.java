@@ -3,7 +3,7 @@ package core;
 import java.util.Arrays;
 
 /**
- * Checkers
+ * CheckersLogic
  * 
  * Checker's game logic
  * 
