@@ -86,6 +86,7 @@ public class CheckersComputerPlayer {
             this.col = col;
         }
 
+        /** Returns the string representation of this object */
         public String toString() {
             return "(" + row + ", " + col + ")";
         }
