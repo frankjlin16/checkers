@@ -2,6 +2,7 @@ package core;
 
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * CheckersComputerPlayer
@@ -65,7 +66,33 @@ public class CheckersComputerPlayer {
      * Select a random piece from movablePieces and move it to a legal new position
      */
     public void move() {
-        // TODO Auto-generated method stub
+        Random rand = new Random();
+        // Pick a random piece from movablePieces
+        Pair p = movablePieces.get(rand.nextInt(movablePieces.size()));
+        // Get old position
+        int oldRow = p.getRow();
+        int oldCol = p.getCol();
+        // Figure out new position
+        int newRow = oldRow + 1;
+        int newCol;
+        if (oldCol == 0) {
+            newCol = oldCol + 1;
+        } else if (oldCol == 7) {
+            newCol = oldCol - 1;
+        } else {
+            if (rand.nextInt(2) == 1) {
+                newCol = oldCol + 1;
+            } else {
+                newCol = oldCol - 1;
+            }
+        }
+
+        // Validate Move
+        if (!game.isValid(oldRow, oldCol, newRow, newCol)) {
+            throw new IllegalStateException("Illegal move!");
+        }
+        // Update board with move
+        game.updateBoard(oldRow, oldCol, newRow, newCol);
     }
 
     /**
@@ -79,8 +106,8 @@ public class CheckersComputerPlayer {
 
     /** A inner-class that represents a movable piece's coordinates */
     class Pair {
-        int row;
-        int col;
+        private int row;
+        private int col;
 
         /**
          * Constructor for the Pair class
