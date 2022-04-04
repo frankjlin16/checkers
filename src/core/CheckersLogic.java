@@ -45,6 +45,7 @@ public class CheckersLogic {
      * @param newRow row index of new position
      * @param newCol colume index of new position
      * @return true if the move is valid, false otherwise.
+     * @throws IllegalArgumentException if the move is invalid
      */
     public boolean isValid(int oldRow, int oldCol, int newRow, int newCol) throws IllegalArgumentException {
         // Can't move opponent piece
