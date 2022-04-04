@@ -88,8 +88,10 @@ public class CheckersComputerPlayer {
         }
 
         // Validate Move
-        if (!game.isValid(oldRow, oldCol, newRow, newCol)) {
-            throw new IllegalStateException("Illegal move!");
+        try {
+            game.isValid(oldRow, oldCol, newRow, newCol);
+        } catch (Exception e) {
+            System.out.println("Computer made an invalid move.");
         }
         // Update board with move
         game.updateBoard(oldRow, oldCol, newRow, newCol);
