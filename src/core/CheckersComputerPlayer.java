@@ -53,9 +53,13 @@ public class CheckersComputerPlayer {
                             newCol1 = j + 1;
                             newCol2 = j - 1;
                         }
-                        if (game.isValid(i, j, i + 1, newCol1) || game.isValid(i, j, i + 1, newCol2)) {
-                            movablePieces.add(new Pair(i, j));
+                        try {
+                            if (game.isValid(i, j, i + 1, newCol1) || game.isValid(i, j, i + 1, newCol2)) {
+                                movablePieces.add(new Pair(i, j));
+                            }
+                        } catch (Exception e) {
                         }
+
                     }
                 }
             }
