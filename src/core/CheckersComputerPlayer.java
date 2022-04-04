@@ -17,6 +17,7 @@ public class CheckersComputerPlayer {
     // Defines variables
     /** A string array that is used to contain all movable pieces */
     private ArrayList<Pair> movablePieces;
+    /** Define variable that will hold game logic */
     private CheckersLogic game;
 
     /**
@@ -113,7 +114,9 @@ public class CheckersComputerPlayer {
 
     /** A inner-class that represents a movable piece's coordinates */
     private class Pair {
+        /** The row coodinate for the checker piece */
         private int row;
+        /** The column coodinate for the checker piece */
         private int col;
 
         /**
