@@ -46,19 +46,19 @@ public class CheckersLogic {
      * @param newCol colume index of new position
      * @return true if the move is valid, false otherwise.
      */
-    public boolean isValid(int oldRow, int oldCol, int newRow, int newCol) {
+    public boolean isValid(int oldRow, int oldCol, int newRow, int newCol) throws IllegalArgumentException {
         // Can't move opponent piece
         if (currentBoard[oldRow][oldCol] != activePlayer || currentBoard[newRow][newCol] == activePlayer) {
-            return false;
+            throw new IllegalArgumentException("Move is not allowed.");
         }
         // Can't be same columnIndex
         if (newCol == oldCol) {
-            return false;
+            throw new IllegalArgumentException("Move is not allowed.");
         }
 
         // Distance between colums can't be greater than 1
         if (newCol - oldCol > 1 || newCol - oldCol < -1) {
-            return false;
+            throw new IllegalArgumentException("Move is not allowed.");
         }
 
         if (activePlayer == "X") {
@@ -70,7 +70,7 @@ public class CheckersLogic {
                 return true;
             }
         }
-        return false;
+        throw new IllegalArgumentException("Move is not allowed.");
     }
 
     /** Change the active player */
