@@ -26,47 +26,43 @@ public class CheckersTextConsole {
 
     /** Game driver */
     public static void main(String[] args) {
-        // Initializes Scanner
-        Scanner kb = new Scanner(System.in);
-
+        // Game start message
         printBoard(game.getBoard());
         System.out.print("Begin Game. Player ");
 
         do {
-            System.out.println(game.getActivePlayer() + " - your turn.");
-            ArrayList<Integer> parsedInput;
-            do {
-                System.out.println("Choose a cell position of piece to be moved and the new position. e.g., 3a-4b");
-                String input = kb.nextLine();
-                parsedInput = parseInput(input);
-                if (!game.isValid(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3))) {
-                    System.out.println("That's an illegal move! Try again. \n");
-                }
-            }while(!game.isValid(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3)));
-            
-            // Update the board
-            game.updateBoard(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3));
-            printBoard(game.getBoard());
+            userTurn();
 
         } while (game.isActive);
 
         System.out.println("Player " + game.getActivePlayer() + " Won the Game");
 
-        kb.close();
-
     }
 
     public static void userTurn() {
         // Local variables
-        
+        boolean repeat = false;
+        // New scanner
+        Scanner kb = new Scanner(System.in);
         // Identify active player
         System.out.println(game.getActivePlayer() + " - your turn.");
+        System.out.println("Choose a cell position of piece to be moved and the new position. e.g., 3a-4b");
         
-        try {
-            
-        } catch (Exception e) {
-            //TODO: handle exception
-        }
+        do {
+            String input = kb.nextLine();
+            ArrayList<Integer> parsedInput = parseInput(input); // Get user input and parse it
+            try {
+                repeat = !game.isValid(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3));
+                game.updateBoard(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3));
+                printBoard(game.getBoard());
+            } catch (Exception e) {
+                System.out.println(e);
+                repeat = true;
+            }
+        } while (repeat);
+
+        kb.close();
+
     }
 
     /**
