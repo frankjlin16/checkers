@@ -88,8 +88,12 @@ public class CheckersTextConsole {
      * 
      * @param input user-input string
      * @return an ArrayList with the initial and final position in integer form
+     * @throws IllegalArgumentException if the input string is not the correct length
      */
-    private static ArrayList<Integer> parseInput(String input) {
+    private static ArrayList<Integer> parseInput(String input) throws IllegalArgumentException {
+        if (input.length() != 5) {
+            throw new IllegalArgumentException("Input must be in the correct format. e.g., 3a-4b");
+        }
         ArrayList<Integer> result = new ArrayList<Integer>();
         String delimiter = "-";
         String[] parsed = input.split(delimiter);
