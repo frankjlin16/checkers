@@ -57,8 +57,13 @@ public class CheckersLogic {
             throw new IllegalArgumentException("Move is not allowed. Try again:");
         }
 
-        // Distance between colums can't be greater than 1
+        // Distance between columns can't be greater than 1
         if (newCol - oldCol > 1 || newCol - oldCol < -1) {
+            throw new IllegalArgumentException("Move is not allowed. Try again:");
+        }
+
+        // Distance between rows can't be greater than 1
+        if (newRow - oldRow > 1 || newRow - oldRow < -1) {
             throw new IllegalArgumentException("Move is not allowed. Try again:");
         }
 
