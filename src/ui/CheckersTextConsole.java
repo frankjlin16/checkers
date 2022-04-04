@@ -27,7 +27,11 @@ public class CheckersTextConsole {
     /** Initialize new inputStreamReader */
     static BufferedReader kb = new BufferedReader(new InputStreamReader(System.in));
 
-    /** Game driver */
+    /**
+     * Driver to the game
+     * 
+     * @param args addition args from command line
+     */
     public static void main(String[] args) {
         // Game start message
         printBoard(game.getBoard());
