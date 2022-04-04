@@ -41,6 +41,7 @@ public class CheckersTextConsole {
 
     }
 
+    /** Handle real player input and move */ 
     public static void userTurn() {
         // Local variables
         boolean repeat = false;
