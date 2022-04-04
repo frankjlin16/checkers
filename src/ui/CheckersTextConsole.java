@@ -3,9 +3,10 @@ package ui;
 import core.CheckersLogic;
 import core.CheckersComputerPlayer;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  * CheckersTextConsole
@@ -24,6 +25,8 @@ public class CheckersTextConsole {
     /** Initialize computer player */
     static CheckersComputerPlayer computer = new CheckersComputerPlayer(game);
 
+    static BufferedReader kb = new BufferedReader(new InputStreamReader(System.in));
+
     /** Game driver */
     public static void main(String[] args) {
         // Game start message
@@ -32,7 +35,6 @@ public class CheckersTextConsole {
 
         do {
             userTurn();
-
         } while (game.isActive);
 
         System.out.println("Player " + game.getActivePlayer() + " Won the Game");
@@ -42,16 +44,14 @@ public class CheckersTextConsole {
     public static void userTurn() {
         // Local variables
         boolean repeat = false;
-        // New scanner
-        Scanner kb = new Scanner(System.in);
         // Identify active player
         System.out.println(game.getActivePlayer() + " - your turn.");
         System.out.println("Choose a cell position of piece to be moved and the new position. e.g., 3a-4b");
-        
+
         do {
-            String input = kb.nextLine();
-            ArrayList<Integer> parsedInput = parseInput(input); // Get user input and parse it
             try {
+                String input = kb.readLine();
+                ArrayList<Integer> parsedInput = parseInput(input);
                 repeat = !game.isValid(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3));
                 game.updateBoard(parsedInput.get(0), parsedInput.get(1), parsedInput.get(2), parsedInput.get(3));
                 printBoard(game.getBoard());
@@ -60,8 +60,6 @@ public class CheckersTextConsole {
                 repeat = true;
             }
         } while (repeat);
-
-        kb.close();
 
     }
 
