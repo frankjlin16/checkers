@@ -24,7 +24,7 @@ public class CheckersTextConsole {
     static CheckersLogic game = new CheckersLogic();
     /** Initialize computer player */
     static CheckersComputerPlayer computer = new CheckersComputerPlayer(game);
-
+    /** Initialize new inputStreamReader */
     static BufferedReader kb = new BufferedReader(new InputStreamReader(System.in));
 
     /** Game driver */
