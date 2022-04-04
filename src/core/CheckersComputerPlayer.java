@@ -95,7 +95,8 @@ public class CheckersComputerPlayer {
         try {
             game.isValid(oldRow, oldCol, newRow, newCol);
         } catch (Exception e) {
-            System.out.println("Computer made an invalid move.");
+            System.out.println("Computer Error: From (" + oldRow + ", " + oldCol + ") to (" + newRow + ", " + newCol + ")");
+            throw e;
         }
         // Update board with move
         game.updateBoard(oldRow, oldCol, newRow, newCol);
