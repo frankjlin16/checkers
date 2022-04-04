@@ -34,14 +34,17 @@ public class CheckersTextConsole {
         System.out.print("Begin Game. Player ");
 
         do {
-            userTurn();
+            if (game.getActivePlayer() == "X")
+                userTurn();
+            else if (game.getActivePlayer() == "O")
+                computerTurn();
         } while (game.isActive);
 
         System.out.println("Player " + game.getActivePlayer() + " Won the Game");
 
     }
 
-    /** Handle real player input and move */ 
+    /** Handle real player input and move */
     public static void userTurn() {
         // Local variables
         boolean repeat = false;
@@ -61,7 +64,14 @@ public class CheckersTextConsole {
                 repeat = true;
             }
         } while (repeat);
+    }
 
+    /** Handle computer player's turn */
+    public static void computerTurn() {
+        computer.searchMovablePieces(game.getBoard());
+        computer.move();
+        printBoard(game.getBoard());
+        System.out.println("The computer has made a move.");
     }
 
     /**
@@ -89,7 +99,8 @@ public class CheckersTextConsole {
      * 
      * @param input user-input string
      * @return an ArrayList with the initial and final position in integer form
-     * @throws IllegalArgumentException if the input string is not the correct length
+     * @throws IllegalArgumentException if the input string is not the correct
+     *                                  length
      */
     private static ArrayList<Integer> parseInput(String input) throws IllegalArgumentException {
         if (input.length() != 5) {
