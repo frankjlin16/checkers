@@ -19,13 +19,13 @@ public class CheckersTextConsole {
     public static final String rowIndex[] = { "8", "7", "6", "5", "4", "3", "2", "1" };
     /** Column index of the game board */
     public static final String colIndex[] = { "a", "b", "c", "d", "e", "f", "g", "h" };
+    /** Initialize game logic */
+    static CheckersLogic game = new CheckersLogic();
+    /** Initialize computer player */
+    static CheckersComputerPlayer computer = new CheckersComputerPlayer(game);
 
     /** Game driver */
     public static void main(String[] args) {
-        // Initializes checker game
-        CheckersLogic game = new CheckersLogic();
-        // Initializes computer player
-        CheckersComputerPlayer computer = new CheckersComputerPlayer(game);
         // Initializes Scanner
         Scanner kb = new Scanner(System.in);
 
@@ -54,6 +54,19 @@ public class CheckersTextConsole {
 
         kb.close();
 
+    }
+
+    public static void userTurn() {
+        // Local variables
+        
+        // Identify active player
+        System.out.println(game.getActivePlayer() + " - your turn.");
+        
+        try {
+            
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
     }
 
     /**
