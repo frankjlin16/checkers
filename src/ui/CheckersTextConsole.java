@@ -1,12 +1,12 @@
 package ui;
 
-import core.CheckersLogic;
-import core.CheckersComputerPlayer;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import core.CheckersComputerPlayer;
+import core.CheckersLogic;
 
 /**
  * CheckersTextConsole
