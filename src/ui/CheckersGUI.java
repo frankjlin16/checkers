@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 
 public class CheckersGUI extends Application {
+
     CheckersLogic game = new CheckersLogic();
 
     @Override
@@ -33,6 +34,10 @@ public class CheckersGUI extends Application {
         stage.show();
     }
 
+    /**
+     * Show the current board
+     * @param grid the grid pane that represents the current board
+     */
     public void showBoard(GridPane grid) {
         String[][] currentBoard = game.getBoard();
         for (int i = 0; i < currentBoard.length; i++) {
