@@ -36,20 +36,27 @@ public class CheckersTextConsole {
      * @param args addition args from command line
      */
     public static void main(String[] args) {
+        int guiSelect;
+        int opponent;
         System.out.println("Choose UI:\n1) Text based\n2) Beautiful GUI");
-        int userInput;
+        guiSelect = scanner.nextInt();
 
-        userInput = scanner.nextInt();
+        if (guiSelect == 1) {
+            System.out.println("Choose your opponent:\n1) Human\n2) Computer");
+            opponent = scanner.nextInt();
+            if (opponent == 1) {
+                vsComputer();
+            } else if (opponent == 2) {
 
-        if (userInput == 1){
-            textUI();
-        } else if (userInput == 2) {
+            }
+            
+        } else if (guiSelect == 2) {
             CheckersGUI.main(args);
         }
     }
 
-    // TODO: JAVADOC
-    public static void textUI() {
+    /** UI for playing Checker with computer */
+    public static void vsComputer() {
         // Game start message
         printBoard(game.getBoard());
         System.out.print("Begin Game. Player ");
