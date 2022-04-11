@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane prefHeight="700.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<GridPane fx:id="grid" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,92 +27,7 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Rectangle fill="TRANSPARENT" height="87.5" scaleZ="0.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.valignment="CENTER" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.rowIndex="1" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="1" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="3" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="2" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="271.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="5" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="271.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="4" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.rowIndex="2" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="271.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="358.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.rowIndex="5" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="271.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="358.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="271.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="358.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.rowIndex="4" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="446.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="358.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="362.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.rowIndex="7" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="274.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.rowIndex="6" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="449.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="271.0" layoutY="274.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="449.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="271.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="358.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="271.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="358.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="449.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="362.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="446.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="271.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="6" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="358.0" layoutY="362.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="274.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="446.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="7" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="184.0" layoutY="362.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="271.0" layoutY="362.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="97.0" layoutY="98.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="446.0" layoutY="274.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="10.0" layoutY="186.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="446.0" layoutY="10.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-      <Rectangle fill="TRANSPARENT" height="87.5" layoutX="358.0" layoutY="274.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="1" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.rowIndex="1" />
+      <Rectangle fill="TRANSPARENT" height="87.5" scaleZ="0.0" smooth="false" stroke="BLACK" strokeWidth="2.0" width="87.5" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="2" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="3" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="4" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="5" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="6" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="7" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.rowIndex="2" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-      <Circle fill="#ff2121" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="2" />
    </children>
 </GridPane>
