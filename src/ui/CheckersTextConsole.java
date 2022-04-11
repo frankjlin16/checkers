@@ -1,9 +1,11 @@
 package ui;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import core.CheckersComputerPlayer;
 import core.CheckersLogic;
@@ -26,6 +28,8 @@ public class CheckersTextConsole {
     static CheckersComputerPlayer computer = new CheckersComputerPlayer(game);
     /** Initialize new inputStreamReader */
     static BufferedReader kb = new BufferedReader(new InputStreamReader(System.in));
+    /** Initialize new Scanner */
+    static Scanner scanner = new Scanner(System.in);
 
     /**
      * Driver to the game
@@ -33,6 +37,20 @@ public class CheckersTextConsole {
      * @param args addition args from command line
      */
     public static void main(String[] args) {
+        System.out.println("Choose UI:\n1) Text based\n2) Beautiful GUI");
+        int userInput;
+
+        userInput = scanner.nextInt();
+
+        if (userInput == 1){
+            textUI();
+        } else if (userInput == 2) {
+            CheckersGUI.main(args);
+        }
+    }
+
+    // TODO: JAVADOC
+    public static void textUI() {
         // Game start message
         printBoard(game.getBoard());
         System.out.print("Begin Game. Player ");
@@ -45,7 +63,6 @@ public class CheckersTextConsole {
         } while (game.isActive);
 
         System.out.println("Player " + game.getActivePlayer() + " Won the Game");
-
     }
 
     /** Handle real player input and move */
