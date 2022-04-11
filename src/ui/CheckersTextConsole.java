@@ -45,14 +45,24 @@ public class CheckersTextConsole {
             System.out.println("Choose your opponent:\n1) Human\n2) Computer");
             opponent = scanner.nextInt();
             if (opponent == 1) {
-                vsComputer();
+                vsHuman();
             } else if (opponent == 2) {
-
+                vsComputer();
             }
             
         } else if (guiSelect == 2) {
             CheckersGUI.main(args);
         }
+    }
+    /** UI for playing Checker with another human player */
+    public static void vsHuman() {
+        // Game start message
+        printBoard(game.getBoard());
+        System.out.print("Begin Game. Player ");
+
+        do {
+            userTurn();
+        } while (game.isActive);
     }
 
     /** UI for playing Checker with computer */
