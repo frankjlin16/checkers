@@ -50,21 +50,21 @@ public class CheckersLogic {
     public boolean isValid(int oldRow, int oldCol, int newRow, int newCol) throws IllegalArgumentException {
         // Can't move opponent piece
         if (currentBoard[oldRow][oldCol] != activePlayer || currentBoard[newRow][newCol] == activePlayer) {
-            throw new IllegalArgumentException("Move is not allowed. Try again:");
+            return false;
         }
         // Can't be same columnIndex
         if (newCol == oldCol) {
-            throw new IllegalArgumentException("Move is not allowed. Try again:");
+            return false;
         }
 
         // Distance between columns can't be greater than 1
         if (newCol - oldCol > 1 || newCol - oldCol < -1) {
-            throw new IllegalArgumentException("Move is not allowed. Try again:");
+            return false;
         }
 
         // Distance between rows can't be greater than 1
         if (newRow - oldRow > 1 || newRow - oldRow < -1) {
-            throw new IllegalArgumentException("Move is not allowed. Try again:");
+            return false;
         }
 
         if (activePlayer == "X") {
@@ -76,7 +76,7 @@ public class CheckersLogic {
                 return true;
             }
         }
-        throw new IllegalArgumentException("Move is not allowed. Try again:");
+        return false;
     }
 
     /** Change the active player */
