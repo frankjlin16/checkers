@@ -7,29 +7,36 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.StrokeType;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class CheckersGUI extends Application {
 
     /** The game logic */
     CheckersLogic game = new CheckersLogic();
-
+    /** Holds the previous circle */
     Circle prevCircle;
+    /** The message to display */
+    Text message = new Text("Red's Turn");
 
     @Override
     public void start(Stage stage) throws Exception {
 
-        Scene scene = new Scene(showBoard());
+        BorderPane bPane = new BorderPane();
+        message.setFont(new Font(36));
+        bPane.setTop(message);
+        bPane.setCenter(showBoard());
+        BorderPane.setAlignment(message, Pos.CENTER);
+        Scene scene = new Scene(bPane);
 
         stage.setTitle("Checkers");
         stage.setScene(scene);
-        stage.show();
-
-        scene = new Scene(showBoard());
         stage.show();
     }
 
@@ -75,14 +82,19 @@ public class CheckersGUI extends Application {
                                 int prevCol = GridPane.getColumnIndex(prevCircle);
                                 int currRow = GridPane.getRowIndex(circle);
                                 int currCol = GridPane.getColumnIndex(circle);
-                                System.out.println(prevRow + " " + prevCol + " " + currRow + " " + currCol);
-
-                                System.out.println(game.isValid(prevRow, prevCol, currRow, currCol));
+                                
                                 // Check and make move
                                 if (game.isValid(prevRow, prevCol, currRow, currCol)) {
                                     game.updateBoard(prevRow, prevCol, currRow, currCol);
                                     circle.setFill(prevCircle.getFill());
                                     prevCircle.setFill(Color.TRANSPARENT);
+                                }
+                                if (!game.isActive) {
+                                    if (game.getActivePlayer() == "X") message.setText("Red has won!");
+                                    else if (game.getActivePlayer() =="O") message.setText("Black has won!");
+                                } else {
+                                    if (game.getActivePlayer() == "O") message.setText("Black's Turn");
+                                    else if (game.getActivePlayer() =="X") message.setText("Red's Turn");
                                 }
                                 // Clean up
                                 prevCircle.setStroke(Color.TRANSPARENT);
