@@ -25,6 +25,11 @@ public class CheckersGUI extends Application {
     /** The message to display */
     Text message = new Text("Red's Turn");
 
+    /** 
+     * Start the GUI for checker
+     * 
+     * @param stage the stage to start the GUI
+    */
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -82,7 +87,7 @@ public class CheckersGUI extends Application {
                                 int prevCol = GridPane.getColumnIndex(prevCircle);
                                 int currRow = GridPane.getRowIndex(circle);
                                 int currCol = GridPane.getColumnIndex(circle);
-                                
+
                                 // Check and make move
                                 if (game.isValid(prevRow, prevCol, currRow, currCol)) {
                                     game.updateBoard(prevRow, prevCol, currRow, currCol);
