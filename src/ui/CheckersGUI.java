@@ -47,8 +47,7 @@ public class CheckersGUI extends Application {
 
     /**
      * Show the current board
-     * 
-     * @param grid the grid pane that represents the current board
+     *
      */
     public GridPane showBoard() {
         // Create the grid pane
