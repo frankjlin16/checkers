@@ -3,3 +3,4 @@ bin/
 lib/
 *.DS_Store
 readme.txt
+.idea/
