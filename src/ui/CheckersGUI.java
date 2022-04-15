@@ -18,18 +18,24 @@ import javafx.stage.Stage;
 
 public class CheckersGUI extends Application {
 
-    /** The game logic */
+    /**
+     * The game logic
+     */
     CheckersLogic game = new CheckersLogic();
-    /** Holds the previous circle */
+    /**
+     * Holds the previous circle
+     */
     Circle prevCircle;
-    /** The message to display */
+    /**
+     * The message to display
+     */
     Text message = new Text("Red's Turn");
 
-    /** 
+    /**
      * Start the GUI for checker
-     * 
+     *
      * @param stage the stage to start the GUI
-    */
+     */
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -47,7 +53,6 @@ public class CheckersGUI extends Application {
 
     /**
      * Show the current board
-     *
      */
     public GridPane showBoard() {
         // Create the grid pane
@@ -95,10 +100,10 @@ public class CheckersGUI extends Application {
                                 }
                                 if (!game.isActive) {
                                     if (game.getActivePlayer() == "X") message.setText("Red has won!");
-                                    else if (game.getActivePlayer() =="O") message.setText("Black has won!");
+                                    else if (game.getActivePlayer() == "O") message.setText("Black has won!");
                                 } else {
                                     if (game.getActivePlayer() == "O") message.setText("Black's Turn");
-                                    else if (game.getActivePlayer() =="X") message.setText("Red's Turn");
+                                    else if (game.getActivePlayer() == "X") message.setText("Red's Turn");
                                 }
                                 // Clean up
                                 prevCircle.setStroke(Color.TRANSPARENT);
