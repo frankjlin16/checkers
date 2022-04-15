@@ -11,28 +11,40 @@ import core.CheckersLogic;
 
 /**
  * CheckersTextConsole
- * 
+ *
  * @author Frank Lin
  * @version 1.0 pre-release
  */
 public class CheckersTextConsole {
 
-    /** Row index of the game board */
-    public static final String rowIndex[] = { "8", "7", "6", "5", "4", "3", "2", "1" };
-    /** Column index of the game board */
-    public static final String colIndex[] = { "a", "b", "c", "d", "e", "f", "g", "h" };
-    /** Initialize game logic */
+    /**
+     * Row index of the game board
+     */
+    public static final String rowIndex[] = {"8", "7", "6", "5", "4", "3", "2", "1"};
+    /**
+     * Column index of the game board
+     */
+    public static final String colIndex[] = {"a", "b", "c", "d", "e", "f", "g", "h"};
+    /**
+     * Initialize game logic
+     */
     static CheckersLogic game = new CheckersLogic();
-    /** Initialize computer player */
+    /**
+     * Initialize computer player
+     */
     static CheckersComputerPlayer computer = new CheckersComputerPlayer(game);
-    /** Initialize new inputStreamReader */
+    /**
+     * Initialize new inputStreamReader
+     */
     static BufferedReader kb = new BufferedReader(new InputStreamReader(System.in));
-    /** Initialize new Scanner */
+    /**
+     * Initialize new Scanner
+     */
     static Scanner scanner = new Scanner(System.in);
 
     /**
      * Driver to the game
-     * 
+     *
      * @param args addition args from command line
      */
     public static void main(String[] args) {
@@ -55,7 +67,9 @@ public class CheckersTextConsole {
         }
     }
 
-    /** UI for playing Checker with another human player */
+    /**
+     * UI for playing Checker with another human player
+     */
     public static void vsHuman() {
         // Game start message
         printBoard(game.getBoard());
@@ -66,7 +80,9 @@ public class CheckersTextConsole {
         } while (game.isActive);
     }
 
-    /** UI for playing Checker with computer */
+    /**
+     * UI for playing Checker with computer
+     */
     public static void vsComputer() {
         // Game start message
         printBoard(game.getBoard());
@@ -82,7 +98,9 @@ public class CheckersTextConsole {
         System.out.println("Player " + game.getActivePlayer() + " Won the Game");
     }
 
-    /** Handle real player input and move */
+    /**
+     * Handle real player input and move
+     */
     public static void userTurn() {
         // Local variables
         boolean repeat = false;
@@ -104,7 +122,9 @@ public class CheckersTextConsole {
         } while (repeat);
     }
 
-    /** Handle computer player's turn */
+    /**
+     * Handle computer player's turn
+     */
     public static void computerTurn() {
         computer.searchMovablePieces(game.getBoard());
         computer.move();
@@ -114,7 +134,7 @@ public class CheckersTextConsole {
 
     /**
      * Prints current state of the game
-     * 
+     *
      * @param board 2D string matrix of the current board state
      */
     public static void printBoard(String[][] board) {
@@ -134,7 +154,7 @@ public class CheckersTextConsole {
 
     /**
      * Parses user input and returns ArrayList in Integer form
-     * 
+     *
      * @param input user-input string
      * @return an ArrayList with the initial and final position in integer form
      * @throws IllegalArgumentException if the input string is not the correct
